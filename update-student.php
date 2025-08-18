@@ -9,10 +9,12 @@ include "./db/detail-student.php";
 <a href="/">Back</a>
 <form
     style="margin-top: 10px;"
-    method="POST">
-
+    method="POST"
+    action="./db/update-student.php">
     <?php foreach ($students as $student) : ?>
-        <input type="hidden" value="<?= $student['id'] ?>">
+        <input
+            name="id"
+            type="hidden" value="<?= $student['id'] ?>">
         <input
             value="<?= $student['full_name'] ?>"
             name="full_name"

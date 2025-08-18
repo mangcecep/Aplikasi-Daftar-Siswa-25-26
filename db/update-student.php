@@ -1,22 +1,15 @@
 <?php
-
 require 'connection.php';
 
+$id = $_POST["id"];
 $full_name = htmlspecialchars($_POST["full_name"]);
 $class = $_POST["classes"];
 $major = $_POST["major"];
 $gender = $_POST["gender"];
 
-$sql = "INSERT INTO students(
-    full_name,
-    classes,
-    major,
-    gender
-) VALUES('$full_name', '$class', '$major', '$gender')";
+$sql = "UPDATE students SET full_name='$full_name', classes='$class', major='$major', gender='$gender' WHERE id=$id";
 
 if ($connection->query($sql)) {
-    session_start();
-    $_SESSION['message'] = "student data has created successfully!";
     header("Location: http://localhost:8000");
     $connection->close();
     die();

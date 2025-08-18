@@ -8,6 +8,10 @@ $no = 1;
 <h1>Aplikasi Data Siswa</h1>
 <a href="/create-student.php">Add Student</a>
 
+<?php if (isset($_SESSION['message'])) : ?>
+    <p style="color: green"><?= $_SESSION['message'] ?></p>
+<?php endif ?>
+
 <table>
     <thead>
         <tr>
