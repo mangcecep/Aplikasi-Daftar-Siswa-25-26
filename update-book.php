@@ -1,7 +1,13 @@
 <?php
+
+if (isset($_SESSION["is_login"]) == false) {
+    header("Location: http://localhost:8000/login.php");
+}
+
 $title = "UPDATE BOOK DATA";
 include "./template/header.php";
 include "./db/detail-book.php";
+
 
 ?>
 

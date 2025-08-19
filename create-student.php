@@ -1,6 +1,13 @@
 <?php
+session_start();
+
 $title = "CREATE STUDENT DATA";
 include "./template/header.php";
+
+if (isset($_SESSION["is_login"]) == false) {
+    header("Location: http://localhost:8000/login.php");
+}
+
 ?>
 
 <h1>Tambah Data Siswa</h1>

@@ -1,6 +1,16 @@
 <?php
+session_start();
+
 $title = "CREATE BOOK DATA";
 include "./template/header.php";
+
+if (isset($_SESSION["is_login"]) == false) {
+    header("Location: http://localhost:8000/login.php");
+}
+
+print_r(["is login" => isset($_SESSION["is_login"])]);
+
+
 ?>
 
 <h1>Tambah Data Buku</h1>
