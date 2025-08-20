@@ -10,7 +10,6 @@ if (isset($_SESSION["is_login"]) == false) {
     header("Location: http://localhost:8000/login.php");
 }
 
-print_r(["is login" => isset($_SESSION["is_login"])]);
 ?>
 
 <h1>Aplikasi Data Siswa</h1>

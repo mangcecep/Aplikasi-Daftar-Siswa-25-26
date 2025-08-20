@@ -2,6 +2,10 @@
 session_start();
 $title = "Aplikasi Data Siswa | REGISTER";
 include "./template/header.php";
+
+if (isset($_SESSION["is_login"]) == true) {
+    header("Location: http://localhost:8000");
+}
 ?>
 
 <section class="container pt-5">
