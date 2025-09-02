@@ -12,6 +12,13 @@ if (isset($_SESSION["is_login"]) == true) {
 <section class="container pt-5">
     <div class="card p-5">
         <h1>HALAMAN LOGIN</h1>
+        <?php if (isset($_SESSION["LOGOUT_MESSAGE"])) : ?>
+            <div class="alert alert-success" role="alert">
+                <?= $_SESSION["LOGOUT_MESSAGE"] ?>
+            </div>
+        <?php session_unset();
+        endif ?>
+
         <?php if (isset($_SESSION["REGISTER_SUCCESS"])) : ?>
             <div class="alert alert-success" role="alert">
                 <?= $_SESSION["REGISTER_SUCCESS"] ?>

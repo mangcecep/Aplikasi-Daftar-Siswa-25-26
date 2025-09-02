@@ -14,7 +14,17 @@ if ($email == "" || $password == "") {
 }
 
 // CEK EMAIL ADA DI DB ATAU TIDAK
-$cekUSER = "SELECT * FROM users WHERE email='$email'";
+$cekUSER = "SELECT 
+users.full_name,
+users.email,
+users.password,
+role.role_name
+FROM users JOIN role_user
+ON role_user.user_id=users.id
+JOIN role
+ON role.id=role_user.role_id
+WHERE email='$email'
+";
 $user = mysqli_query($connection, $cekUSER);
 
 if ($connection->query($cekUSER)->num_rows == 0) {

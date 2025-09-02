@@ -6,7 +6,7 @@ $id = $_GET['id'];
 $sql = "DELETE FROM students WHERE id=$id";
 
 if ($connection->query($sql)) {
-    header("Location: http://localhost:8000");
+    header("Location: http://localhost:8000/student.php");
     $connection->close();
     die();
 }

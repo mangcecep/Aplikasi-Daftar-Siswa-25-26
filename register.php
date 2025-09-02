@@ -17,7 +17,8 @@ if (isset($_SESSION["is_login"]) == true) {
                 <?= $_SESSION["VALIDATION_INPUT"] ?>
             </div>
 
-        <?php session_unset();
+        <?php
+            session_unset();
         endif ?>
 
         <?php if (isset($_SESSION["VALIDATION_EMAIL_EXIST"])) : ?>
@@ -25,7 +26,8 @@ if (isset($_SESSION["is_login"]) == true) {
                 <?= $_SESSION["VALIDATION_EMAIL_EXIST"] ?>
             </div>
 
-        <?php session_unset();
+        <?php
+            session_unset();
         endif ?>
 
         <?php if (isset($_SESSION["VALIDATION_SUCCESS"])) : ?>
